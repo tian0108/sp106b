@@ -1,0 +1,120 @@
+﻿console.log()		查詢物件裡的東西
+
+範例:
+var fruit = [
+    {apple},
+    {banana},
+    {watermelom}
+    ] 
+
+console.log(fruit);	列出fruit裡的東西
+--------------------------------------------------------------------------
+process.argv[2]
+設以下腳本為process-args.js：
+
+// print process.argv
+process.argv.forEach((val, index) => {
+  console.log(`${index}: ${val}`);
+});
+啟動Node.js過程如下：
+
+$ node process-args.js one two=three four
+會生成輸出：
+
+0: /usr/local/bin/node
+1: /Users/mjr/work/node/process-args.js
+2: one
+3: two=three
+4: four
+--------------------------------------------------------------------------
+fs.readFileSync（path [，options]）	
+同步讀取文件，返回一個字符串
+
+第一個參數是文件路徑，第二個是配置的對象
+
+var text = fs.readFileSync(fileName, 'utf8');
+
+// 将文件按行拆成数组
+text.split(/\r?\n/).forEach(function (line) {
+  // ...
+});
+--------------------------------------------------------------------------
+JSON.stringify()	將JavaScript對象字符串化
+
+var obj = { "name":"John", "age":30, "city":"New York"};
+var myJSON = JSON.stringify(obj);
+document.getElementById("demo").innerHTML = myJSON;
+
+{"name":"John","age":30,"city":"New York"}
+
+
+--------------------------------------------------------------------------
+match()			搜索字符串指定的值
+
+<script type="text/javascript">
+
+var str="Hello world!"
+document.write(str.match("world") + "<br />")
+document.write(str.match("World") + "<br />")
+document.write(str.match("worlld") + "<br />")
+document.write(str.match("world!"))
+
+</script>
+
+output:
+world
+null
+null
+world!
+--------------------------------------------------------------------------
+stringObj.trim()	移除字串前後的空白字元以及行結束字元
+
+var message = "    abc def     \r\n  ";
+
+document.write("[" + message.trim() + "]");
+document.write("<br/>");
+document.write("length: " + message.trim().length);
+
+// Output:
+//  [abc def]
+//  length: 7
+--------------------------------------------------------------------------
+substring (字串)	傳回 String 物件中指定之位置的子字串
+
+var s = "The quick brown fox jumps over the lazy dog.";
+var ss = s.substring(10, 15);
+document.write(ss);
+
+// Output:
+// brown
+--------------------------------------------------------------------------
+toString（）		將數字轉換為字符串
+
+var num = 15;
+var n = num.toString();
+
+ouput:
+15
+--------------------------------------------------------------------------
+parseInt()		將輸入的字串轉成整數
+
+function roughScale(x, base) {
+  
+var parsed = parseInt(x, base);
+
+if (isNaN(parsed)) { return 0 }
+  return parsed * 100;
+
+}
+
+
+console.log(roughScale(' 0xF', 16));
+
+output:1500
+
+--------------------------------------------------------------------------
+
+
+
+
+
